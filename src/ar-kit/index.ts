@@ -12,5 +12,4 @@ export { ARScan } from "./components/ARScan";
 
 // Engine utilities
 export { useLazy, preloadModule } from "./engine/useLazy";
-export * from "./engine/gestures";
-export * from "./engine/webxrPlace";
+export * from "./engine/arSupport";
