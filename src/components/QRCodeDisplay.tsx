@@ -15,7 +15,7 @@ export const QRCodeDisplay: React.FC<QRCodeDisplayProps> = ({
     const [qrCodeUrl, setQrCodeUrl] = useState<string>("");
 
     useEffect(() => {
-        QRCode.toDataURL(url, { width: size, margin: 2 }, (err, dataUrl) => {
+        QRCode.toDataURL(url, { width: size, margin: 2 }, (err: Error | null | undefined, dataUrl: string) => {
             if (!err) {
                 setQrCodeUrl(dataUrl);
             } else {

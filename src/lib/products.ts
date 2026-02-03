@@ -15,7 +15,7 @@ const DEMO_PRODUCT: Product = {
     description: "A simple 3D cube to test AR viewing capabilities. This appears because no products were loaded from the database.",
     thumbnail_url: "https://modelviewer.dev/shared-assets/models/Astronaut.png",
     model_glb_url: "https://modelviewer.dev/shared-assets/models/Astronaut.glb", // Reliable public test model
-    target_mind_url: null, // No target for this demo
+    target_mind_url: undefined, // No target for this demo
     created_at: new Date().toISOString()
 };
 

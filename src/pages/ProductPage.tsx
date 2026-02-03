@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { getProductBySlug, prefetchModel } from "../lib/products";
 import { ARButton } from "../ar-kit/components/ARButton";

@@ -1,36 +1,36 @@
-import React, { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 
 interface PhoneSimulatorProps {
-    children: ReactNode;
-    darkMode?: boolean;
+  children: ReactNode;
+  darkMode?: boolean;
 }
 
 export const PhoneSimulator: React.FC<PhoneSimulatorProps> = ({
-    children,
-    darkMode = true,
+  children,
+  darkMode = true,
 }) => {
-    return (
-        <div className={`phone-simulator ${darkMode ? "dark" : "light"}`}>
-            <div className="phone-simulator__frame">
-                {/* Notch / Dynamic Island */}
-                <div className="phone-simulator__notch">
-                    <div className="phone-simulator__camera" />
-                    <div className="phone-simulator__speaker" />
-                </div>
+  return (
+    <div className={`phone-simulator ${darkMode ? "dark" : "light"}`}>
+      <div className="phone-simulator__frame">
+        {/* Notch / Dynamic Island */}
+        <div className="phone-simulator__notch">
+          <div className="phone-simulator__camera" />
+          <div className="phone-simulator__speaker" />
+        </div>
 
-                {/* Side Buttons */}
-                <div className="phone-simulator__button phone-simulator__button--volume-up" />
-                <div className="phone-simulator__button phone-simulator__button--volume-down" />
-                <div className="phone-simulator__button phone-simulator__button--power" />
+        {/* Side Buttons */}
+        <div className="phone-simulator__button phone-simulator__button--volume-up" />
+        <div className="phone-simulator__button phone-simulator__button--volume-down" />
+        <div className="phone-simulator__button phone-simulator__button--power" />
 
-                {/* Screen Content */}
-                <div className="phone-simulator__screen">{children}</div>
+        {/* Screen Content */}
+        <div className="phone-simulator__screen">{children}</div>
 
-                {/* Home Indicator */}
-                <div className="phone-simulator__home-bar" />
-            </div>
+        {/* Home Indicator */}
+        <div className="phone-simulator__home-bar" />
+      </div>
 
-            <style>{`
+      <style>{`
         .phone-simulator {
           position: relative;
           display: inline-block;
@@ -138,8 +138,8 @@ export const PhoneSimulator: React.FC<PhoneSimulatorProps> = ({
           pointer-events: none;
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default PhoneSimulator;

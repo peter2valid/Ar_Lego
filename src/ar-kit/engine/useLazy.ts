@@ -29,7 +29,9 @@ export function useLazy<T>(
 
         try {
             const loaded = await loader();
-            const mod = "default" in loaded ? loaded.default : loaded;
+            const mod = (loaded && typeof loaded === "object" && "default" in loaded)
+                ? (loaded as { default: T }).default
+                : (loaded as T);
             setModule(mod as T);
             return mod as T;
         } catch (err) {

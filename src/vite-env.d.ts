@@ -42,7 +42,7 @@ declare module "mind-ar/dist/mindar-image-three.prod.js" {
     }
 }
 
-// WebXR types (for browsers that support it)
+// WebXR types
 interface XRSession {
     requestHitTestSource?(options: { space: XRReferenceSpace }): Promise<XRHitTestSource>;
     requestReferenceSpace(type: string): Promise<XRReferenceSpace>;
@@ -77,31 +77,4 @@ interface Navigator {
         isSessionSupported(mode: string): Promise<boolean>;
         requestSession(mode: string, options?: object): Promise<XRSession>;
     };
-}
-
-// Extend JSX to include model-viewer
-declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            "model-viewer": React.DetailedHTMLProps<
-                React.HTMLAttributes<HTMLElement> & {
-                    src?: string;
-                    alt?: string;
-                    ar?: boolean;
-                    "ar-modes"?: string;
-                    "camera-controls"?: boolean;
-                    "touch-action"?: string;
-                    poster?: string;
-                    loading?: "auto" | "lazy" | "eager";
-                    reveal?: "auto" | "manual";
-                    "auto-rotate"?: boolean;
-                    "shadow-intensity"?: string;
-                    "environment-image"?: string;
-                    exposure?: string;
-                    "ios-src"?: string;
-                },
-                HTMLElement
-            >;
-        }
-    }
 }
